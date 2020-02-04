@@ -1,0 +1,7 @@
+tags:
+  - RPG
+responses:
+  500:
+    description: Api não está respondendo!
+  200:
+    description: Api funcionando normalmente!

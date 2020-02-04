@@ -1,34 +1,37 @@
 import random
 from flask import Flask
 from flask import Blueprint
-from flask import request
-from flasgger.utils import swag_from
 from utils.schema import Schema
-from utils.request_log import RequestLog
-from utils.authorization import Authorization
-from service.sms.v1.company import Company
 from flasgger.utils import swag_from
-from flask import Flask, jsonify, request
 
-base_url = "/api/v1/sms"
+from model.player.status import StatusPlayer
+from model.monster.status import StatusMonster
+
+from service.fight.batalha import Fight
+
+base_url = ""
 application = Flask(__name__)
 rpg_blueprint = Blueprint("sms", __name__, url_prefix=base_url)
 schema = Schema()
 
 
-@rpg_blueprint.route('/api/<string:language>/', methods=['GET'])
-@swag_from('index.yml')
-def index(language):
-    language = language.lower().strip()
-    features = [
-        "awesome", "great", "dynamic",
-        "simple", "powerful", "amazing",
-        "perfect", "beauty", "lovely"
-    ]
-    size = int(request.args.get('size', 1))
-    if language in ['php', 'vb', 'visualbasic', 'actionscript']:
-        return "An error occurred, invalid language for awesomeness", 500
-    return jsonify(
-        language=language,
-        features=random.sample(features, size)
-    )
+@rpg_blueprint.route('/status/', methods=['GET'])
+@swag_from('status.yml')
+def index():
+    return {"success": True}
+
+
+@rpg_blueprint.route('/player_attack/<id_player>/<id_monster>/', methods=['GET'])
+@swag_from('player_attack.yml')
+def player_attack(id_player, id_monster):
+    status_player = StatusPlayer(id_player)
+    status_player.get_status()
+    status_player.get_basic_data()
+
+    status_monster = StatusMonster(id_monster)
+    status_monster.get_status()
+    status_monster.get_basic_data()
+
+    batalha = Fight(status_player, status_monster)
+
+    return batalha.player_attack()
