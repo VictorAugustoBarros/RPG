@@ -1,3 +1,5 @@
+from controller.player.playerController import PlayerController
+
 class StatusPlayer:
     def __init__(self, id_player):
         self.id_player = id_player
@@ -12,6 +14,8 @@ class StatusPlayer:
         }
 
     def get_status(self):
+        # PlayerController.get_staus_by_id(self.id_player)
+
         self.status = {
             "Vida": 100,
             "Ataque": 10,
