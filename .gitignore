@@ -1,0 +1,27 @@
+#--------------------------------------------------------------------
+
+# .gitignore file, see http://git-scm.com/docs/gitignore for details
+
+#--------------------------------------------------------------------
+
+# Ignore artifacts of build system
+
+temp/*
+uploads/*
+*.log
+*.txt
+*.TXT
+*.csv
+*.CSV
+*.zip
+*.xml
+*.XML
+/nbproject/private/
+/nbproject/
+docker-compose.yml
+.idea
+.idea/
+.idea/*
+.idea/**/
+.idea/*/*
+.vscode
