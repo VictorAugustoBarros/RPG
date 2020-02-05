@@ -8,6 +8,7 @@ from model.player.status import StatusPlayer
 from model.monster.status import StatusMonster
 
 from service.fight.batalha import Fight
+from service.fight.xp import Xp
 
 base_url = ""
 application = Flask(__name__)
@@ -16,13 +17,13 @@ schema = Schema()
 
 
 @rpg_blueprint.route('/status/', methods=['GET'])
-@swag_from('status.yml')
+@swag_from('details/status.yml')
 def index():
     return {"success": True}
 
 
 @rpg_blueprint.route('/player_attack/<id_player>/<id_monster>/', methods=['GET'])
-@swag_from('player_attack.yml')
+@swag_from('details/player_attack.yml')
 def player_attack(id_player, id_monster):
     status_player = StatusPlayer(id_player)
     status_player.get_status()
@@ -35,3 +36,11 @@ def player_attack(id_player, id_monster):
     batalha = Fight(status_player, status_monster)
 
     return batalha.player_attack()
+
+
+@rpg_blueprint.route('/gain_xp_monster/<id_player>/<id_monster>/', methods=['GET'])
+@swag_from('details/gain_xp_monster.yml')
+def gain_xp_monster(id_player, id_monster):
+    xp = Xp(id_player, id_monster)
+
+    return xp.gain_xp_monster()

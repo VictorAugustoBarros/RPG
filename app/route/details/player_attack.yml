@@ -1,0 +1,19 @@
+tags:
+  - RPG
+parameters:
+  - name: id_player
+    in: path
+    type: integer
+    required: true
+    description: ID do jogador
+
+  - name: id_monster
+    in: path
+    type: integer
+    required: true
+    description: ID do monstro
+responses:
+  500:
+    description: Erro durante o ataque do player!
+  200:
+    description: Player Atacou com sucesso!

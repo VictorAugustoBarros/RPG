@@ -1,1 +1,24 @@
+mysql:
+
+  sms:
+    user: ""
+    pwd: ""
+    host: ""
+    port:
+    schema: ""
+
+  email:
+    user: ""
+    pwd: ""
+    host: ""
+    port:
+    schema: ""
+
+mongodb:
+  host: ""
+  port:
+  user: ""
+  pwd: ""
+
+
 auth: "gc4Eew5L4wJloAvTAJoit56mnh0lso23"
