@@ -20,3 +20,9 @@ def new_account(email, login, senha, nick):
 @swag_from('details_user/new_user.yml')
 def delete_account(email, login, senha):
     return {"success": True}
+
+
+@login_blueprint.route('/get_account/<email>/<login>/<senha>/', methods=['GET'])
+@swag_from('details_user/new_user.yml')
+def get_account(email, login, senha):
+    return {"success": True}
