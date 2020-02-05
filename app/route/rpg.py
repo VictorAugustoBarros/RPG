@@ -12,14 +12,8 @@ from service.fight.xp import Xp
 
 base_url = ""
 application = Flask(__name__)
-rpg_blueprint = Blueprint("sms", __name__, url_prefix=base_url)
+rpg_blueprint = Blueprint("rpg", __name__, url_prefix=base_url)
 schema = Schema()
-
-
-@rpg_blueprint.route('/status/', methods=['GET'])
-@swag_from('details_game/status.yml')
-def index():
-    return {"success": True}
 
 
 @rpg_blueprint.route('/player_attack/<id_player>/<id_monster>/', methods=['GET'])

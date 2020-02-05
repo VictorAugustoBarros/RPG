@@ -27,10 +27,6 @@ responses:
     schema:
       id: Gain XP Monster
       properties:
-        Nickname:
-          type: integer
-          description: Nivel do Player
-
         Email:
           type: integer
           description: Quantidade de XP do Player

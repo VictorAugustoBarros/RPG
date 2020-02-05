@@ -17,21 +17,3 @@ responses:
     description: Erro durante receber o XP!
   200:
     description: Player Atacou com sucesso!
-    schema:
-      id: Gain XP Monster
-      properties:
-        Level:
-          type: integer
-          description: Nivel do Player
-
-        XP:
-          type: integer
-          description: Quantidade de XP do Player
-
-        XP Next Level:
-          type: integer
-          description: Quantidade de XP necessário para upar
-
-        Porcentagem XP:
-          type: string
-          description: Porcentagem de XP do Player
