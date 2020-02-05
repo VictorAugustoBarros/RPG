@@ -17,13 +17,13 @@ schema = Schema()
 
 
 @rpg_blueprint.route('/status/', methods=['GET'])
-@swag_from('details/status.yml')
+@swag_from('details_game/status.yml')
 def index():
     return {"success": True}
 
 
 @rpg_blueprint.route('/player_attack/<id_player>/<id_monster>/', methods=['GET'])
-@swag_from('details/player_attack.yml')
+@swag_from('details_game/player_attack.yml')
 def player_attack(id_player, id_monster):
     status_player = StatusPlayer(id_player)
     status_player.get_status()
@@ -39,7 +39,7 @@ def player_attack(id_player, id_monster):
 
 
 @rpg_blueprint.route('/gain_xp_monster/<id_player>/<id_monster>/', methods=['GET'])
-@swag_from('details/gain_xp_monster.yml')
+@swag_from('details_game/gain_xp_monster.yml')
 def gain_xp_monster(id_player, id_monster):
     xp = Xp(id_player, id_monster)
 

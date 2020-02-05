@@ -1,5 +1,5 @@
 tags:
-  - RPG
+  - Game
 parameters:
   - name: id_player
     in: path
@@ -20,6 +20,18 @@ responses:
     schema:
       id: Gain XP Monster
       properties:
-        lvl:
+        Level:
           type: integer
           description: Nivel do Player
+
+        XP:
+          type: integer
+          description: Quantidade de XP do Player
+
+        XP Next Level:
+          type: integer
+          description: Quantidade de XP necessário para upar
+
+        Porcentagem XP:
+          type: string
+          description: Porcentagem de XP do Player

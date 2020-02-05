@@ -1,5 +1,5 @@
 tags:
-  - RPG
+  - Game
 parameters:
   - name: id_player
     in: path
@@ -17,3 +17,17 @@ responses:
     description: Erro durante o ataque do player!
   200:
     description: Player Atacou com sucesso!
+    schema:
+      id: Player Attack
+      properties:
+        Monster Status After Attack:
+          type: object
+          description: {}
+
+        Monster Status Before Attack:
+          type: object
+          description: {}
+
+        Player Status:
+          type: object
+          description: {}

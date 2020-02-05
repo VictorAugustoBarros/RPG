@@ -1,0 +1,32 @@
+tags:
+  - Users
+parameters:
+  - name: Nickname
+    in: path
+    type: string
+    required: true
+    description: Nickname do Jogador
+
+  - name: Email
+    in: path
+    type: string
+    required: true
+    description: Email do usuário
+
+  - name: Login
+    in: path
+    type: string
+    required: true
+    description: Login do Usuário
+
+  - name: Senha
+    in: path
+    type: string
+    required: true
+    description: Senha do Usuário
+
+responses:
+  500:
+    description: Erro durante ao cadastrar novo usuário!
+  200:
+    description: Usuário cadastrado com sucesso!

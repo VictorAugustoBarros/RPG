@@ -12,7 +12,7 @@ class Xp:
             lvl_player = 1
             xp = 1000
             xp_next = 2000
-            xp_porcent = str((xp * 100) / xp_next) + "%"
+            xp_porcent = str(round((xp * 100) / xp_next)) + "%"
 
             return jsonify(
                 {"Level": lvl_player, "XP": xp, "XP Next Level": xp_next, "%": xp_porcent})
