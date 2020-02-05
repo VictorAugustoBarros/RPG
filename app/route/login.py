@@ -10,7 +10,7 @@ login_blueprint = Blueprint("login", __name__, url_prefix=base_url)
 schema = Schema()
 
 
-@login_blueprint.route('/new_account/<email>/<login>/<senha>/<nick>/', methods=['POST'])
+@login_blueprint.route('/new_account/<email>/<login>/<senha>/', methods=['POST'])
 @swag_from('details_user/new_user.yml')
 def new_account(email, login, senha, nick):
     return {"success": True}
